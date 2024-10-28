@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+/* Set wrapper to occupy full viewport */
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensure rows scale with viewport size */
+.rows {
+    margin: 1vw;
+    padding: 1vw;
+    background-color: transparent;
+    width: 15vw; /* Adjust for laptops */
+    height: 15vw; /* Keep it square */
+    border: 2px solid white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    margin-top: 2vh;
+}
+
+/* Responsive Game Information */
+.gameinfo {
+    margin-top: 3vh;
+    text-align: center;
+    border: 2px solid white;
+    color: white;
+    background-color: black;
+    width: 30vw; /* Scaled for laptop */
+    max-width: 300px;
+    padding: 10px;
+    font-size: 18px; /* Slightly larger for laptop */
+}
+
+/* Responsive Button */
+.btn {
+    margin: 3vh auto;
+    display: block;
+    border: 2px solid white;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    width: 25vw; /* Balanced for laptops */
+    max-width: 200px;
+    background-color: black;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Win state */
+.win {
+    background-color: green;
+}
+
+/* Adjust text sizes dynamically */
+.chlo {
+    padding: 2vw;
+    color: rgb(26, 244, 26);
+    font-size: 4vw; /* Adjusted for laptop */
+    font-weight: bold;
+}
+
+.chlo0 {
+    padding: 2vw;
+    color: white;
+    font-size: 5vw;
+    font-weight: bold;
+}
+
+/* Keyframes for move animation */
+@keyframes hlo {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-360deg);
+        border: 2px solid green;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Winner class styling */
+.winner {
+    background-color: black;
+    color: white;
+    border: 2px solid rgb(26, 244, 26);
+}
+.newgame{
+    animation: scal 4s ease-in-out 1;
+}
+@keyframes scal {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-360deg);
+        border: 4px solid green;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Blinking effect for box elements */
+.blow {
+    animation: sd 5s ease-in-out 0s infinite;
+}
+
+@keyframes sd {
+    0% {
+        border: 2px solid red;
+        color: aqua;
+    }
+    25% {
+        border: 2px solid pink;
+        color: saddlebrown;
+    }
+    50% {
+        border: 2px solid orange;
+        color: darkcyan;
+    }
+    75% {
+        border: 2px solid violet;
+        color: sandybrown;
+    }
+    100% {
+        border: 2px solid salmon;
+        color: violet;
+    }
+}
+
+/* Media queries for small screens (mobile) */
+@media (max-width: 768px) {
+    .gameinfo, .btn {
+        width: 80vw; /* Full width for small screens */
+        font-size: 14px; /* Reduce font size */
+    }
+
+    /* Resize the boxes for small screens */
+    .rows {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .chlo {
+        font-size: 7vw;
+    }
+
+    .chlo0 {
+        font-size: 8vw;
+    }
+}
+
+/* Media queries for larger screens (laptops and desktops) */
+@media (min-width: 1024px) {
+    .rows {
+        width: 10vw;
+        height: 10vw; /* Smaller size for larger screens */
+    }
+
+    .gameinfo {
+        width: 20vw; /* Smaller info box */
+        font-size: 16px; /* Smaller font size */
+    }
+
+    .btn {
+        width: 20vw; /* Smaller button */
+        font-size: 16px; /* Smaller font */
+    }
+
+    .chlo, .chlo0 {
+        font-size: 3vw; /* Reduce text size for larger screens */
+    }
+}
